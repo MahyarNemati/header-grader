@@ -10,7 +10,7 @@ RUN CGO_ENABLED=0 go build -trimpath \
       -ldflags "-s -w -X main.version=${VERSION}" \
       -o /out/header-grader ./cmd/header-grader
 
-FROM alpine:3.21
+FROM alpine:3.24
 # ca-certificates is required: without it every HTTPS scan fails verification
 # and would be graded as if the site were broken.
 RUN apk add --no-cache ca-certificates \
